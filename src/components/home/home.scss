@@ -1,0 +1,9 @@
+.card-deck {
+    position: relative;
+
+    .card-container {
+        width: 100%;
+        display: flex;
+        overflow-x: scroll;
+    }
+}
