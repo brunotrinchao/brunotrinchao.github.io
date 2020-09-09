@@ -7,6 +7,10 @@ import store from './store';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap-vue/dist/bootstrap-vue.css';
 
+import TrendChart from "vue-trend-chart";
+
+Vue.use(TrendChart);
+
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
 

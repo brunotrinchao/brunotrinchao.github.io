@@ -8,10 +8,17 @@
     <div class="bloco_info mt-4">
       <div class="row">
         <div class="col-12">
-          <div class="progresso"><Progresso :percento="percento" /></div>
+          <div class="progresso"><Progresso :pontos="pontos" :meta-total="60" /></div>
         </div>
       </div>
     </div>
+    <!-- <div class="bloco_info mt-4">
+      <div class="row">
+        <div class="col-12">
+          <ChartLines/>
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 

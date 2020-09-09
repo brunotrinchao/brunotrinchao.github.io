@@ -12,7 +12,7 @@ export default {
   },
   data() {
     return {
-      meta: 9,
+      meta: 0,
       pontos: 0,
       bahia: 1777,
       percentagem: 0,
@@ -21,6 +21,9 @@ export default {
     };
   },
   computed: {},
+  beforeMount() {
+    this.meta = this.itens.length > 2 ? 9 : this.itens.length * 3;
+  },
   mounted() {
     this.percentagem = this.calculaDesempenho();
   },
@@ -79,11 +82,16 @@ export default {
 
       let pct = Math.round((this.pontos * 100) / this.meta);
 
+      let metaFaltam =
+        this.meta - this.pontos > 0
+          ? `<span class="text-danger">${this.meta - this.pontos} ponto${sPontoCal}</span>`
+          : '-';
+
       this.textoBloco = `
       <small><b>Disputados:</b> ${jogos.length * 3} pontos</small><br/>
       <small><b>Ganhos:</b> ${this.pontos} ponto${sPonto} (${pct}%)</small><br/>
                         <small><b>Meta:</b> ${this.meta} pontos</small><br/>
-                        <small><b>Faltam:</b> ${this.meta - this.pontos} ponto${sPontoCal}</small>`;
+                        <small><b>Faltam:</b> ${metaFaltam}</small>`;
 
       return pct;
     },

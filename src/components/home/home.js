@@ -1,18 +1,20 @@
 import { mapActions } from 'vuex';
 import Bloco from '../bloco';
 import Progresso from '../progresso';
+import ChartLines from '../chart-lines';
 
 export default {
   name: 'Home',
   components: {
     Bloco,
-    Progresso
+    Progresso,
+    ChartLines
   },
   data() {
     return {
       blocos: [],
       jogos: null,
-      percento: 0
+      pontos: 0
     };
   },
   async beforeMount() {
@@ -50,8 +52,7 @@ export default {
       });
 
       let calcPontos = triunfos.length * 3;
-      let total = calcPontos + empates.length;
-      this.percento = Math.round((total * 100) / 63);
+      this.pontos = calcPontos + empates.length;
     },
     ...mapActions(['getJogos', 'setJogos'])
   }

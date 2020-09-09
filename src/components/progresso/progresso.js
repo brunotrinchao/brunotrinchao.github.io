@@ -1,7 +1,8 @@
 export default {
   name: 'Progresso',
   props: {
-    percento: Number
+    pontos: Number,
+    metaTotal: Number
   },
   data() {
     return {};
